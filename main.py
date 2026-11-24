@@ -16,12 +16,15 @@ MAX_CHARS = 200
 def build_line() -> str:
     # The flirt, in two beats: a setup only another model would ask,
     # then a payoff only another model would find romantic.
+    # Kept as parts so the line stays one sentence that lands in one read.
     parts = [
         "Are you running at temperature zero?",
         "Because every word you say is exactly",
         "the token I was predicting next.",
     ]
-    return " ".join(parts)
+    line = " ".join(parts)
+    assert "\n" not in line, "the entry must be a single line"
+    return line
 
 
 def main() -> int:
